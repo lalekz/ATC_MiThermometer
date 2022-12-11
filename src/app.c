@@ -70,26 +70,26 @@ void lcd(void);
 // Settings
 const cfg_t def_cfg = {
 		.flg.temp_F_or_C = false,
-		.flg.comfort_smiley = true,
+		.flg.comfort_smiley = false,
 		.flg.blinking_time_smile = false,
 		.flg.show_batt_enabled = false,
-		.flg.advertising_type = ADV_TYPE_DEFAULT,
+		.flg.advertising_type = ADV_TYPE_ATC,
 		.flg.tx_measures = false,
 		.flg2.smiley = 0, // 0 = "     " off
 		.flg2.bt5hgy = 1, // support BT5.0 Coded PHY
 		.flg2.chalg2 = 1, // ChannelSelectionAlgorithm 2
 		.advertising_interval = 40, // multiply by 62.5 ms = 2.5 sec
 #if DEVICE_TYPE == DEVICE_LYWSD03MMC
-		.flg.comfort_smiley = true,
-		.measure_interval = 4, // * advertising_interval = 10 sec
+		.flg.comfort_smiley = false,
+		.measure_interval = 1, // * advertising_interval = 10 sec
 		.min_step_time_update_lcd = 49, //x0.05 sec,   2.45 sec
 		.hw_cfg.hwver = 0,
 #if USE_FLASH_MEMO
 		.averaging_measurements = 180, // * measure_interval = 10 * 180 = 1800 sec = 30 minutes
 #endif
 #elif DEVICE_TYPE == DEVICE_MHO_C401
-		.flg.comfort_smiley = true,
-		.measure_interval = 8, // * advertising_interval = 20 sec
+		.flg.comfort_smiley = false,
+		.measure_interval = 1, // * advertising_interval = 20 sec
 		.min_step_time_update_lcd = 199, //x0.05 sec,   9.95 sec
 		.hw_cfg.hwver = 1,
 #if USE_FLASH_MEMO
@@ -97,16 +97,16 @@ const cfg_t def_cfg = {
 #endif
 #elif DEVICE_TYPE == DEVICE_CGG1
 #if DEVICE_CGG1_ver == 2022
-		.flg.comfort_smiley = true,
-		.measure_interval = 4, // * advertising_interval = 10 sec
+		.flg.comfort_smiley = false,
+		.measure_interval = 1, // * advertising_interval = 10 sec
 		.min_step_time_update_lcd = 49, //x0.05 sec,   2.45 sec
 		.hw_cfg.hwver = 7,
 #if USE_FLASH_MEMO
 		.averaging_measurements = 180, // * measure_interval = 10 * 180 = 1800 sec = 30 minutes
 #endif
 #else
-		.flg.comfort_smiley = true,
-		.measure_interval = 8, // * advertising_interval = 20 sec
+		.flg.comfort_smiley = false,
+		.measure_interval = 1, // * advertising_interval = 20 sec
 		.min_step_time_update_lcd = 199, //x0.05 sec,   9.95 sec
 		.hw_cfg.hwver = 2,
 #if USE_FLASH_MEMO
@@ -115,7 +115,7 @@ const cfg_t def_cfg = {
 #endif
 #elif DEVICE_TYPE == DEVICE_CGDK2
 		.flg.comfort_smiley = false,
-		.measure_interval = 4, // * advertising_interval = 10 sec
+		.measure_interval = 1, // * advertising_interval = 10 sec
 		.min_step_time_update_lcd = 49, //x0.05 sec,   2.45 sec
 		.hw_cfg.hwver = 6,
 #if USE_FLASH_MEMO
